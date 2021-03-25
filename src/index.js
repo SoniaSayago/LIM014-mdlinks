@@ -12,8 +12,8 @@ try {
   }
 
 //función que verifica si la ruta es absoluta y la devuelve
-const route = './mdtest/readme.md'
-function validatePath (route){
-  console.log(path.isAbsolute(route))
-  return path.isAbsolute(route)===true ?route : path.resolve(route) // operator ternario condiciones? expr1 :expr2
-} 
+const rute = './mdtest/readme.md';
+function validatePath (rute){
+  console.log(path.isAbsolute(rute))
+  return path.isAbsolute(rute)===true ?rute : path.resolve(rute) // operator ternario condiciones? expr1 :expr2
+}
