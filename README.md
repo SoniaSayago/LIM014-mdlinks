@@ -18,7 +18,6 @@ La librería esta implementada en JavaScript para ser ejecutada con Node.js.
 
 ## Necesidad del usuario:
 
-Instalar la libreria via npm install --global SoniaSayago/LIM014-md-links
 
 ### Modulos utilizados
   Implementa los modulos de node.js:
@@ -28,7 +27,8 @@ Instalar la libreria via npm install --global SoniaSayago/LIM014-md-links
   - console
 
 ## Lenguaje utilizado
-    El código está escrito en lenguaje de javascript.
+Instalar la libreria via :
+    npm install --g SoniaSayago/LIM014-md-links
 
 ## Pruebas unitarias
     Para las pruebas unitarias se utilizó Jest.
