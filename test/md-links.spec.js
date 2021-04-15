@@ -1,10 +1,8 @@
 const {
   existsRoute,
-  validateAbsolute,
   IsFile,
   IsMd,
   extraerLinks,
-  convertAbsolute,
   validatePath,
 } = require('../src/index.js');
 

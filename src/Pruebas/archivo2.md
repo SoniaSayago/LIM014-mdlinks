@@ -1,3 +1,3 @@
-https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_statsync_path_options
-https://nodejs.dev/learn/the-nodejs-path-module
-https://github.com/SoniaSayago/LIM014-mdlinks/issues
+[Notion](https://notionapp.es/)
+[Slack](https://app.slack.com/client/T0NNB6T0R/C0NNB4N5N/thread/C011C4W2ENR-1617888158.069700)
+[Comercio](https://elcomercio.pe/)

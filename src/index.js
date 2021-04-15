@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const marked = require('marked');
-const fetch = require('fetch');
+const fetch = require('node-fetch');
 
 
 // ejemplos de rutas *absoluta & relativa *
@@ -9,8 +9,8 @@ const relativePath = 'src\\Pruebas';
 const absolutePath = 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\Pruebas';
 
 //función que verifica si la ruta es absoluta
-var prueba = path.isAbsolute(absolutePath)
-console.log(prueba,"13")
+var isAbsolute = path.isAbsolute(absolutePath)
+console.log(isAbsolute,"13")
 
 //función que verifica si la ruta es absoluta y la devuelve; si es relativa, la vuelve absoluta
 function validatePath(relativePath){
@@ -36,29 +36,21 @@ console.log(isMd(absolutePath),"28")
 const readDirectorio = (absolutePath) => fs.readdirSync(absolutePath);
 console.log(readDirectorio(absolutePath),"29")
 
-//FUNCIÓN para convertir route relativa a absoluta-----------------------------------//
-const convertAbsolute = ((route) => {
-  if (!Isabsolute(route)) {
-    const newAbsolute = path.resolve(route);
-    return newAbsolute;
-  }
-  return route;
-});
 
-//FUNCIÓN que lee directorio--------------------------------------------------------------//
+//FUNCIÓN que lee directorio//
 
 const ArrayFilesandDirectories = (route) => {
   return readDirectorio(route).map(element =>//se crea una nueva matriz con los elementos encontrados
     path.join(route, element)); //une los segmentos de ruta especificados en una ruta
 };
 
-//FUNCIÓN que trae archivos .md----------------------------------------------------------//
+//FUNCIÓN que trae archivos .md//
 
 const searchRoutemd = (route) => {
   let arrayMdFiles = [];
-  const filePath = convertAbsolute(route);
-  if (IsFile(filePath)) {
-    if (IsMd(filePath) === '.md') { //por cada elemento preguntamos si tiene extencion .md y la extrae
+  const filePath = validatePath(route);
+  if (isFile(filePath)) {
+    if (isMd(filePath) === '.md') { //por cada elemento preguntamos si tiene extencion .md y la extrae
       arrayMdFiles.push(filePath);
     }
   } else {
@@ -132,13 +124,13 @@ const validateOptions = (arrAllLinks) => {
   return Promise.all(statusLinks);
 };
 
-validateOptions('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\Pruebas').then((res)=>console.log(res));
-
-
+const saveArray = extraerLinks(absolutePath)
+validateOptions(saveArray).then((res)=>console.log(res));
 
 
 module.exports = {
   existsRoute,
+  isAbsolute,
   validatePath,
   relativePath,
   absolutePath,
