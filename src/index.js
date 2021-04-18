@@ -6,35 +6,33 @@ const fetch = require('node-fetch');
 
 // ejemplos de rutas *absoluta & relativa *
 const relativePath = 'src\\Pruebas';
-const absolutePath = 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\Pruebas';
+const absolutePath = 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\test\\Pruebas';
 
 //función que verifica si la ruta es absoluta
 var isAbsolute = path.isAbsolute(absolutePath)
-console.log(isAbsolute,"13")
 
 //función que verifica si la ruta es absoluta y la devuelve; si es relativa, la vuelve absoluta
 function validatePath(relativePath){
-return path.isAbsolute(relativePath)===true ?relativePath : path.resolve(relativePath) // operator ternario condiciones? expr1 :expr2
-}
-console.log(validatePath(absolutePath),"25")
+return path.isAbsolute(relativePath)===true ?relativePath : path.resolve(relativePath)} // operator ternario condiciones? expr1 :expr2
+// **console.log(validatePath(absolutePath),"25")
 
 // Funcion que verifica si existe la ruta
-const existsRoute = (absolutePath) =>{
-  return fs.existsSync(absolutePath)
+function existsRoute(absolutePath) {
+  return fs.existsSync(absolutePath);
 }
-console.log(existsRoute(absolutePath),30)
+//** console.log(existsRoute(absolutePath),30)
 
 //función que verifica si es archivo
 const isFile = ((absolutePath) => fs.statSync(absolutePath).isFile());
-console.log(isFile(absolutePath),"27")
+// console.log(isFile(absolutePath),"27")
 
 //Función que extrae si tiene extención .md
 const isMd = (absolutePath) => (path.extname(absolutePath));
-console.log(isMd(absolutePath),"28")
+// console.log(isMd(absolutePath),"28")
 
 // función que lee directorio
 const readDirectorio = (absolutePath) => fs.readdirSync(absolutePath);
-console.log(readDirectorio(absolutePath),"29")
+// console.log(readDirectorio(absolutePath),"29")
 
 
 //FUNCIÓN que lee directorio//
@@ -63,14 +61,12 @@ const searchRoutemd = (route) => {
   return arrayMdFiles;
 };
 
-// FUNCIÓN que trae archivo//
+// FUNCIÓN que trae archivo, resultado trae todo la información del archivoo//
 const readFilePath = (route) => fs.readFileSync(route).toString();
 
-// resultado trae todo la información del archivo
 
 // FUNCIÓN que permite extraer links de archivos //
-
-// devuelve array de objetos
+// *** devuelve array de objetos
 const extraerLinks = (route) => {
   let arrayLinks = [];
   const renderer = new marked.Renderer();
@@ -130,10 +126,7 @@ validateOptions(saveArray).then((res)=>console.log(res));
 
 module.exports = {
   existsRoute,
-  isAbsolute,
   validatePath,
-  relativePath,
-  absolutePath,
   validateOptions,
   ArrayFilesandDirectories,
   readFilePath,
@@ -141,5 +134,5 @@ module.exports = {
   extraerLinks,
   isMd,
   readDirectorio,
-  isFile,
+  isFile
 };

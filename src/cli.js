@@ -5,7 +5,6 @@ const { totalUnique, broken } = require('./Options.js')
 const mdlinks = require('./mdlinks.js');
 
 const argumento = process.argv.slice(2)
-
 if (argumento.length === 1) {
   mdlinks(argumento[0], { validate: true }).then(resp => {
     resp.forEach(element => {

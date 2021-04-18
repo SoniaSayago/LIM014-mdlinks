@@ -4,17 +4,18 @@
   "description": "mi package.json",
   "main": "src/index.js",
   "bin": {
-    "mdlinks": "src/cli.js"
+    "md-links": "src/cli.js"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose --coverage",
     "prueba": "node src/index.js",
-    "start": "serve src/",
+    "start": "node src/mdlinks.js",
     "lint": "eslint --ext .js src/index.js  test/",
-    "test:coverage":  "jest --coverage"
+    "test:coverage":  "jest --coverage  --verbose",
+    "md-links": "src/cli.js"
   },
   "repository": {
     "type": "git",

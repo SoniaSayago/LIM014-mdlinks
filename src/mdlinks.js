@@ -18,6 +18,6 @@ const mdlinks = (stringpath, options={}) => {
   )
 };
 
-mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\Pruebas', { validate: false }).then((response) => { console.log(response) });
+mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\test\\PRUEBATEST\\testfiles', { validate: false }).then((response) => { console.log(response) });
 
 module.exports = mdlinks;
