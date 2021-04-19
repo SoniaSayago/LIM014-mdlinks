@@ -26,16 +26,75 @@ La librería esta implementada en JavaScript para ser ejecutada con Node.js.
   - path
   - console
 
-## Lenguaje utilizado
-Instalar la libreria via :
-    npm install --g SoniaSayago/LIM014-md-links
 
 ## Pruebas unitarias
     Para las pruebas unitarias se utilizó Jest.
 
 ## Instalación
-    Usando npm (una vez que ya has instalado node.js)
+    Instalar la libreria via :
+```
+npm install SoniaSayago-mdlinks
+```
 
+## Guia de Uso
+
+### A traves de la Interfaz de Línea de Comando(CLI)
+
+El ejecutable de la aplicaión se puede ejecutar de la siguiente
+manera a través de la terminal:
+
+`md-links <path> [options]`
+
+Por ejemplo:
+
+```sh
+$ md-links ./some/example.md
+./some/example.md http://algo.com/2/3/ Link a algo
+./some/example.md https://otra-cosa.net/algun-doc.html algún doc
+./some/example.md http://google.com/ Google
+```
+#### Options
+
+##### `--validate`
+
+Si pasamos la opción `--validate`, el módulo debe hacer una petición HTTP para
+averiguar si el link funciona o no. Si el link resulta en una redirección a una
+URL que responde ok, entonces consideraremos el link como ok.
+
+Por ejemplo:
+
+```sh
+$ md-links ./src/Pruebas --validate
+https://developer.mozilla.org/es/docs/Glossary/Callback_function Mozilla C:\Users\N20\Documents\GitHub\LIM014-mdlinks\src\Pruebas\archivo1.md 200 OK
+https://nodejs.org/es/download/ Node C:\Users\N20\Documents\GitHub\LIM014-mdlinks\src\Pruebas\archivo1.md 200 OK
+https://httpstat.us/404 http error  C:\Users\N20\Documents\GitHub\LIM014-mdlinks\src\Pruebas\archivo1.md 404 fail
+
+```
+
+Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
+la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
+URL.
+
+##### `--stats`
+
+Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
+básicas sobre los links.
+
+```sh
+$ md-links ./src/Pruebas --stats
+Total: 6
+Unique: 6
+```
+
+También podemos combinar `--stats` y `--validate` para obtener estadísticas que
+necesiten de los resultados de la validación.
+
+```sh
+$ md-links ./src/Pruebas --stats --validate
+Total: 6
+Unique: 6
+Broken: 1
+```
 
 ## **Diagramas de Flujo**
 

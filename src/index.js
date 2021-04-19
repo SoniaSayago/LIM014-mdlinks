@@ -3,10 +3,9 @@ const fs = require('fs');
 const marked = require('marked');
 const fetch = require('node-fetch');
 
-
 // ejemplos de rutas *absoluta & relativa *
 const relativePath = 'src\\Pruebas';
-const absolutePath = 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\src\\test\\Pruebas';
+const absolutePath = 'C:\\Users\\\N20\\\Documents\\GitHub\\LIM014-mdlinks\\test\\FAIL';
 
 //función que verifica si la ruta es absoluta
 var isAbsolute = path.isAbsolute(absolutePath)
@@ -87,7 +86,7 @@ const extraerLinks = (route) => {
 // FUNCIÓN que retorna 5 propiedades
 
 const validateOptions = (arrAllLinks) => {
-  const statusLinks = arrAllLinks.map((element) =>
+  const statusLinks = arrAllLinks.map((element) => // map: retorna un array nuevo
   fetch(element.href)
     .then((res) => { //la interfaz Response contiene el código de estado de la respuesta (ejm., 200 para un éxito).
       if((res.status >= 200) && (res.status <= 399)){
@@ -112,7 +111,7 @@ const validateOptions = (arrAllLinks) => {
         href: element.href,
         text: (element.text.substring(0, 50)),
         path: element.file,
-        status:404,
+        status: 404,
         statusText: 'fail'
       }
     })
@@ -120,8 +119,8 @@ const validateOptions = (arrAllLinks) => {
   return Promise.all(statusLinks);
 };
 
-const saveArray = extraerLinks(absolutePath)
-validateOptions(saveArray).then((res)=>console.log(res));
+// const saveArray = extraerLinks(absolutePath)
+// validateOptions(saveArray).then((res)=>console.table(res));
 
 
 module.exports = {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const colors = require('colors')
-const { totalUnique, broken } = require('./Options.js')
+const { totalUnique, broken } = require('./Option.js')
 const mdlinks = require('./mdlinks.js');
 
 const argumento = process.argv.slice(2)
@@ -24,8 +24,11 @@ if (argumento.length === 2) {
     mdlinks(argumento[0], { validate: true }).then(resp => console.log(colors.bgMagenta(totalUnique(resp))))
   }
 }
+
 if (argumento.length === 3) {
   if ((argumento[1] === '--validate' && argumento[2] === '--stats') || (argumento[1] === '--stats' && argumento[2] === '--validate')) {
-    mdlinks(argumento[0], { validate: true }).then(resp => console.log(colors.bgMagenta(totalUnique(resp) + '\n' + broken(resp))));
+    mdlinks(argumento[0], { validate: true }).then(resp => console.log(colors.bgMagenta(totalUnique(resp) + '\n' + (colors.bgRed(broken(resp))))));
+  } else {
+    console.log(colors.blackBright('Lo siento, no es un comando válido.'))
   }
 }
