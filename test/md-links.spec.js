@@ -28,7 +28,7 @@ describe('Comprobar si la ruta es absoluta', () => {
     expect(typeof validatePath).toBe('function');
   });
   test('Si la ruta es relativa la convierte  a absoluta', () => {
-      expect(validatePath('test/PRUEBATEST/testfiles/test4.md')).toEqual('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles\\test4.md');
+      expect(validatePath('test/PRUEBATEST/testfiles/test4.md')).toEqual('c:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles\\test4.md');
     });
   });
 

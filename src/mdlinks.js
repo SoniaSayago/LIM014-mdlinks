@@ -19,6 +19,6 @@ const mdlinks = (stringpath, options={}) => {
 };
 
 // mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST', { validate: true}).then((res) => { console.log(res) });
-//mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\FAIL', { validate: true}).then((res) => { console.log(res) });
+// mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\FAIL', { validate: true}).then((res) => { console.log(res) });
 
 module.exports = mdlinks;

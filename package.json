@@ -1,7 +1,7 @@
 {
   "name": "SoniaSayago-mdlinks",
   "version": "0.1.0",
-  "description": "md-links",
+  "description": "Command Line that parses and validates markdown links, in adittion to displaying their statistics",
   "main": "./lib/md-links.js",
   "bin": {
     "md-links": "src/cli.js"
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoniaSayago/LIM014-mdlinks.git"
+    "url": "git+https://github.com/SoniaSayago/LIM014-mdlinks"
   },
   "keywords": [
     "javascript",

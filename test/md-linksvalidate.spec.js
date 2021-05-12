@@ -1,5 +1,4 @@
-const mdlinks = require('../src/mdlinks');
-// const { mdlinks } = require('../src/mdlinks')
+const { mdlinks } = require('../src/mdlinks')
 
 //---------------MDLINK----------------------//
 describe('TEST de mdlinks', () => {
@@ -18,19 +17,18 @@ describe('TEST de mdlinks', () => {
     ];
     return expect(mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST', { validate: false })).resolves.toEqual(ouputMdlink);
   });
-});
 
-describe('mdlinks ', () => {
-  test('Esto retorna un array de objetos con 5 propiedades validate:true', () => {
-    const ouputTrue = [
-      {
-        href: 'https://app.slack.com/client/T0NNB6T0R/C01HF3GS945',
-        text: 'slack',
-        path: 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles\\test4.md',
-        status: 200,
-        statusText: 'OK'
-      }
-      ];
-      return expect(mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles', { validate: true})).resolves.toEqual(ouputTrue);
+// describe('mdlinks ', () => {
+//   test('Esto retorna un array de objetos con 5 propiedades validate:true', () => {
+//     const ouputTrue = [
+//       {
+//         href: 'https://app.slack.com/client/T0NNB6T0R/C01HF3GS945',
+//         text: 'slack',
+//         path: 'C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles\\test4.md',
+//         status: 200,
+//         statusText: 'OK'
+//       }
+//       ];
+//       return expect(mdlinks('C:\\Users\\N20\\Documents\\GitHub\\LIM014-mdlinks\\test\\PRUEBATEST\\testfiles', { validate: true})).resolves.toEqual(ouputTrue);
     });
-  });
+
